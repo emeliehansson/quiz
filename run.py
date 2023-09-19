@@ -1,10 +1,10 @@
 # Displays the welcome screen to the user.
 def welcomeScreen():
-    # Welcome screen
-    print('Welcome to this quiz!!')
-    print('-------------------------')
+    print("Welcome to Emelie's quiz!!")
+    print('❁❁❁❁❁❁❁❁❁❁❁❁❁❁❁❁❁')
     print('Are you ready? Good Luck!')
     print()
+
 
 # Asks the user for their name, username or what they want to give.
 def userName():
@@ -14,6 +14,14 @@ def userName():
     print()
     # Prints a hello string with the users name
     print(f'Hello, {name}')
+    print()
+
+
+def displayCategories(categories):
+    print('You can choose from the following categories: \n')
+
+    for category in categories:
+        print(category)
     print()
 
 
@@ -66,6 +74,8 @@ def fetchUserInput():
     print()
 
 
+categories1 = ['Geography', 'Music', 'General Knowledge']
+
 # Main program
 
 welcomeScreen()
@@ -76,6 +86,7 @@ run = True
 while run:
 
     # startGame()
+    displayCategories(categories1)
     displayQuestions()
     choice = fetchUserInput()
 
@@ -119,6 +130,3 @@ while run:
         print('Sorry, I cannot understand what you want to do.')
 
 displayQuestions()
-
-
-
