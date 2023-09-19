@@ -18,40 +18,11 @@ def userName():
 
 
 def displayCategories(categories):
-    print('You can choose from the following categories: \n')
+    print('You can choose from the following categories:\n')
 
     for category in categories:
         print(category)
     print()
-
-
-"""
-# Gives the user two options, here they can start the game or choose to end it.
-def startGame():
-    # Ask for user input
-    print('So... Are you ready?')
-    print('1. For sure!')
-    print("2. Don't think so..")
-    print('Make a choice by pressing 1 or 2 ')
-
-    # User input
-    choice = input('Answer: ')
-    print()
-    # Sanitize user input
-    if not choice.isnumeric():
-        print('Please provide an answer')
-
-    # User can press 1 or 2 depending on what they want to do, start or end game.
-    choice = input('Answer: ')
-    if choice == 1:
-        print('Here we go!! ')
-    elif choice == 2:
-        print('That is really sad..')
-        print('Bye bye')
-        run = False
-    else:
-        print("That's not an option, I hope you're ready then.. ")
-"""
 
 
 # Displays the questions the user can choose between, user chooses inputs the number they want.
