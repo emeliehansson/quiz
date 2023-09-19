@@ -18,7 +18,7 @@ def userName():
 
 
 def displayCategories(categories):
-    print('You can choose from the following categories:\n')
+    print('The questions are based on these categories: \n')
 
     for category in categories:
         print(category)
@@ -28,10 +28,15 @@ def displayCategories(categories):
 # Displays the questions the user can choose between, user chooses inputs the number they want.
 def displayQuestions():
     print('Choose a question: \n')
+    print('Geography:')
     print('1. What is the capital of Sweden?')
-    print("2. Which female artist sings the song 'Rolling in the deep'?")
-    print('3. How many days in year?')
-    print('4. Pepsi or Coca Cola?')
+    print('2. What is the largest river in South America?')
+    print('Music:')
+    print("3. Who had a 1984 hit with 'I Want to Know What Love Is?")
+    print("4. Which trio of brothers released the song 'Mmm Bop’ in 1997?")
+    print('General Knowledge:')
+    print('5. What is the chemical symbol for gold?')
+    print('6. Which country hosted the 2016 Summer Olympics?')
 
 
 # Ask user for input.
@@ -40,16 +45,17 @@ def fetchUserInput():
     ans = input('Answer: ')
     print()
     if ans.isdigit():
-        if int(ans) >= 1 and int(ans) <5:
+        if int(ans) >= 1 and int(ans) <7:
             return int(ans)
     print()
 
 
-categories1 = ['Geography', 'Music', 'General Knowledge']
+categories1 = ['❀ Geography', '❀ Music', '❀ General Knowledge']
+
 
 # Main program
-
 welcomeScreen()
+displayCategories(categories1)
 userName()
 
 # Main loop/game loop
@@ -57,7 +63,6 @@ run = True
 while run:
 
     # startGame()
-    displayCategories(categories1)
     displayQuestions()
     choice = fetchUserInput()
 
@@ -66,36 +71,55 @@ while run:
         print('What is the capital of Sweden?')
         answer = input('Answer: ')
         print()
-        if answer == 'Stockholm' or answer == 'stockholm':
+        if answer == 'Stockholm' or answer == 'stockholm' or answer == 'STOCKHOLM':
             print(f"☆ {answer} is correct! Great job! ☆ \n")
         else:
             print('Sorry, wrong answer.. :( \n')
 
     elif choice == 2:
-        print("Which female artist sings the song 'Rolling in the deep'?")
+        print('What is the largest river in South America?')
         answer = input('Answer: ')
-        if answer == 'Adele':
+        print()
+        if answer == 'Amazon' or answer == 'amazon' or answer == 'AMAZON':
             print(f"☆ {answer} is correct! Great job! ☆ \n")
         else:
             print('Sorry, wrong answer.. :( \n')
 
     elif choice == 3:
-        print("How many days in year'?")
+        print("Who had a 1984 hit with 'I Want to Know What Love Is'?")
         answer = input('Answer: ')
         print()
-        if answer == str(365):
+        if answer == 'Foreigner' or answer == 'foreigner' or answer == 'FOREIGNER':
             print(f"☆ {answer} is correct! Great job! ☆ \n")
         else:
             print('Sorry, wrong answer.. :( \n')
 
     elif choice == 4:
-        print('Pepsi or Coca Cola?')
+        print("Which trio of brothers released the song 'Mmm Bop’ in 1997?")
         answer = input('Answer: ')
         print()
-        if answer == 'Pepsi' or answer == 'pepsi':
-            print(f"☆ That's correct! {answer} always wins! ☆ \n")
+        if answer == 'Hanson' or answer == 'hanson' or answer == 'HANSON':
+            print(f"☆ {answer} is correct! Great job! ☆ \n")
         else:
-            print('Sorry, wrong answer.. :( Pepsi is always the winner! \n')
+            print('Sorry, wrong answer.. :( \n')
+
+    elif choice == 5:
+        print('What is the chemical symbol for gold?')
+        answer = input('Answer: ')
+        print()
+        if answer == 'Au' or answer == 'au' or answer == 'AU':
+            print(f"☆ {answer} is correct! Great job! ☆ \n")
+        else:
+            print('Sorry, wrong answer.. :( \n')
+
+    elif choice == 6:
+        print('Which country hosted the 2016 Summer Olympics?')
+        answer = input('Answer: ')
+        print()
+        if answer == 'Brazil' or answer == 'brazil' or answer == 'BRAZIL':
+            print(f"☆ {answer} is correct! Great job! ☆ \n")
+        else:
+            print('Sorry, wrong answer.. :( \n')
 
     else:
         print('Sorry, I cannot understand what you want to do.')
