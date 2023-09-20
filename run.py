@@ -6,7 +6,8 @@ def welcomeScreen():
     print()
 
 
-# Asks the user for their name, username or what they want to give.
+# Asks for input for the user to provide their name, username or what they want to give.
+# The output prints a string that welcomes the user by using their name, ex: "Hello, Emelie".
 def userName():
     # Ask for username
     print('Please give me your name: ')
@@ -37,6 +38,7 @@ def displayQuestions():
     print('General Knowledge:')
     print('5. What is the chemical symbol for gold?')
     print('6. Which country hosted the 2016 Summer Olympics?')
+    print('0. Press 0 to quit game.')
 
 
 # Ask user for input.
@@ -45,7 +47,7 @@ def fetchUserInput():
     ans = input('Answer: ')
     print()
     if ans.isdigit():
-        if int(ans) >= 1 and int(ans) <7:
+        if int(ans) >= 0 and int(ans) <7:
             return int(ans)
     print()
 
@@ -66,7 +68,11 @@ while run:
     displayQuestions()
     choice = fetchUserInput()
 
-    choice = int(choice)
+    if choice == -1:
+        print('Sorry! I did not understand what you meant? Please give me a number.')
+        continue
+
+    # choice = int(choice)
     if choice == 1:
         print('What is the capital of Sweden?')
         answer = input('Answer: ')
@@ -121,7 +127,17 @@ while run:
         else:
             print('Sorry, wrong answer.. :( \n')
 
+    elif choice == 0:
+        print('Do you want to quit game? yes/no')
+        answer = input('Answer: ')
+        print()
+        if answer == 'yes' or answer == 'Yes':
+            run = False
+            welcomeScreen()
+        elif answer == 'no' or answer == 'No':
+            print("Let's keep going!")
     else:
         print('Sorry, I cannot understand what you want to do.')
+
 
 displayQuestions()
