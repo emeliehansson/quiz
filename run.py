@@ -143,21 +143,23 @@ while run:
         else:
             print('Sorry, wrong answer.. :( \n')
         time.sleep(1.5)
+        displayQuestions()
 
     elif choice == 0:
-        print('Do you want to quit game? yes/no')
+        print('Do you want to quit game? y/n')
         answer = input('Answer: ')
         print()
-        if answer == 'yes' or answer == 'Yes' or answer == 'YES':
+        if answer == 'y' or answer == 'Y':
             print('Sorry to see you go.. bye bye')
             time.sleep(1)
             run = False
-            welcomeScreen()
-        elif answer == 'no' or answer == 'No' or answer == 'NO':
+            # welcomeScreen()
+        elif answer == 'n' or answer == 'N':
             print("Let's keep going!")
+            time.sleep(0.5)
     else:
         print('Sorry, I cannot understand what you want to do.')
 
 
 # Displays the questions again after the user has given an answer.
-displayQuestions()
+# displayQuestions()
