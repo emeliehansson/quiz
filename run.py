@@ -1,7 +1,10 @@
+import time
+
+
 # Displays the welcome screen to the user.
 def welcomeScreen():
     print("Welcome to Emelie's quiz!!")
-    print('❁❁❁❁❁❁❁❁❁❁❁❁❁❁❁❁❁')
+    print('❁❁❁❁❁❁❁❁❁❁❁❁❁❁❁❁❁❁')
     print('Are you ready? Good Luck!')
     print()
 
@@ -16,8 +19,10 @@ def userName():
     # Prints a hello string with the users name
     print(f'Hello, {name}')
     print()
+    time.sleep(1)
 
 
+# Displays the categories with a for loop
 def displayCategories(categories):
     print('The questions are based on these categories: \n')
 
@@ -26,9 +31,11 @@ def displayCategories(categories):
     print()
 
 
-# Displays the questions the user can choose between, user chooses inputs the number they want.
+# Displays the questions, user chooses by pressing the number they want.
+# Option of quitting game is also available here.
 def displayQuestions():
-    print('Choose a question: \n')
+    print('Choose an option: \n')
+    print('Press a number from 1-6 or press 0 to quit the game.')
     print('Geography:')
     print('1. What is the capital of Sweden?')
     print('2. What is the largest river in South America?')
@@ -41,21 +48,22 @@ def displayQuestions():
     print('0. Press 0 to quit game.')
 
 
-# Ask user for input.
-# the if statement in this code is borrowed from Jimmy's adventure game.
+# Asks user for input of the questions.
+# The if statement in this code is borrowed from Jimmy's adventure game.
 def fetchUserInput():
     ans = input('Answer: ')
     print()
     if ans.isdigit():
-        if int(ans) >= 0 and int(ans) <7:
+        if int(ans) >= 0 and int(ans) < 7:
             return int(ans)
     print()
 
 
+# This list displays the categories, used in displayCategories function.
 categories1 = ['❀ Geography', '❀ Music', '❀ General Knowledge']
 
 
-# Main program
+# Main program, shows welcome screen, categories and asks for username.
 welcomeScreen()
 displayCategories(categories1)
 userName()
@@ -64,15 +72,18 @@ userName()
 run = True
 while run:
 
-    # startGame()
+    # Starts the game by displaying questions and asking user for input.
     displayQuestions()
     choice = fetchUserInput()
 
+    # If statement to handle input that is not accepted in the game.
     if choice == -1:
         print('Sorry! I did not understand what you meant? Please give me a number.')
         continue
 
-    # choice = int(choice)
+    # If/else statements for choices of the questions.
+    # The number chosen will display the question and then ask for input.
+    # The option to quit game available.
     if choice == 1:
         print('What is the capital of Sweden?')
         answer = input('Answer: ')
@@ -81,6 +92,7 @@ while run:
             print(f"☆ {answer} is correct! Great job! ☆ \n")
         else:
             print('Sorry, wrong answer.. :( \n')
+        time.sleep(1.5)
 
     elif choice == 2:
         print('What is the largest river in South America?')
@@ -90,6 +102,7 @@ while run:
             print(f"☆ {answer} is correct! Great job! ☆ \n")
         else:
             print('Sorry, wrong answer.. :( \n')
+        time.sleep(1.5)
 
     elif choice == 3:
         print("Who had a 1984 hit with 'I Want to Know What Love Is'?")
@@ -99,6 +112,7 @@ while run:
             print(f"☆ {answer} is correct! Great job! ☆ \n")
         else:
             print('Sorry, wrong answer.. :( \n')
+        time.sleep(1.5)
 
     elif choice == 4:
         print("Which trio of brothers released the song 'Mmm Bop’ in 1997?")
@@ -108,6 +122,7 @@ while run:
             print(f"☆ {answer} is correct! Great job! ☆ \n")
         else:
             print('Sorry, wrong answer.. :( \n')
+        time.sleep(1.5)
 
     elif choice == 5:
         print('What is the chemical symbol for gold?')
@@ -117,6 +132,7 @@ while run:
             print(f"☆ {answer} is correct! Great job! ☆ \n")
         else:
             print('Sorry, wrong answer.. :( \n')
+        time.sleep(1.5)
 
     elif choice == 6:
         print('Which country hosted the 2016 Summer Olympics?')
@@ -126,18 +142,22 @@ while run:
             print(f"☆ {answer} is correct! Great job! ☆ \n")
         else:
             print('Sorry, wrong answer.. :( \n')
+        time.sleep(1.5)
 
     elif choice == 0:
         print('Do you want to quit game? yes/no')
         answer = input('Answer: ')
         print()
-        if answer == 'yes' or answer == 'Yes':
+        if answer == 'yes' or answer == 'Yes' or answer == 'YES':
+            print('Sorry to see you go.. bye bye')
+            time.sleep(1)
             run = False
             welcomeScreen()
-        elif answer == 'no' or answer == 'No':
+        elif answer == 'no' or answer == 'No' or answer == 'NO':
             print("Let's keep going!")
     else:
         print('Sorry, I cannot understand what you want to do.')
 
 
+# Displays the questions again after the user has given an answer.
 displayQuestions()
