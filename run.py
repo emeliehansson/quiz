@@ -81,7 +81,7 @@ while run:
         print('Sorry! I did not understand what you meant? Please give me a number.')
         continue
 
-    # If/else statements for choices of the questions.
+    # If/else statements for choices of the questions, after every answer input, wrong or right, the questions are displayed again.
     # The number chosen will display the question and then ask for input.
     # The option to quit game available.
     if choice == 1:
@@ -159,7 +159,3 @@ while run:
             time.sleep(0.5)
     else:
         print('Sorry, I cannot understand what you want to do.')
-
-
-# Displays the questions again after the user has given an answer.
-# displayQuestions()
